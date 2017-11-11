@@ -1,7 +1,7 @@
-package pl.samouczekprogramisty.szs.floatingpoint;
+package pl.samouczekprogramisty.misc.floatingpoint;
 
 import org.junit.Test;
-import pl.samouczekprogramisty.szs.floatingpoint.FloatingPoint.Format;
+import pl.samouczekprogramisty.misc.floatingpoint.FloatingPoint.Format;
 
 import java.math.BigDecimal;
 

@@ -1,4 +1,4 @@
-package pl.samouczekprogramisty.szs.floatingpoint;
+package pl.samouczekprogramisty.misc.floatingpoint;
 
 import java.math.BigDecimal;
 
