@@ -66,7 +66,7 @@ public class FloatingPoint {
                         Integer.toBinaryString(Float.floatToRawIntBits(ieee754Value))
                 ).replace(' ', '0')
         );
-    }g
+    }
 
     private FloatingPoint(BigDecimal realValue, double ieee754Value) {
         this(
