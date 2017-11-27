@@ -10,7 +10,7 @@ public class ArithmeticSequenceSum {
         if (numbers == null || numbers.length == 0) {
             return 0;
         }
-        return (numbers[0] + numbers[numbers.length -1]) * numbers.length / 2;
+        return (numbers[0] + numbers[numbers.length - 1]) * numbers.length / 2;
     }
 
 }
