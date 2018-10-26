@@ -1,0 +1,53 @@
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+public class PostCodeService {
+
+    private List<String> cityList = new ArrayList<>();
+
+    public List<String> getCity(String postcode){
+        String response =  makeHttpCall("http://kodypocztoweapi.pl/json/"+postcode);
+
+        JSONArray results = new JSONArray(response);
+
+        for(int i = 0; i < results.length(); i++){
+            JSONObject objectInResult = results.getJSONObject(i);
+
+            String city = objectInResult.getString("miejscowosc");
+            cityList.add(city);
+        }
+
+        return cityList;
+    }
+
+
+
+
+    private String makeHttpCall(String url){
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            HttpURLConnection httpURLConnection =
+                    (HttpURLConnection) new URL(url).openConnection();
+            InputStream inputStream = httpURLConnection.getInputStream();
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            int read;
+            while ((read = inputStreamReader.read()) != -1){
+                stringBuilder.append((char)read);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return stringBuilder.toString();
+    }
+}
+
+
