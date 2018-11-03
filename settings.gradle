@@ -4,3 +4,5 @@ include '01_floating_point_numbers'
 include '02_computational_complexity'
 include '03_solid'
 include '04_bean_validation'
+include '05_dry_kiss_yagni'
+
