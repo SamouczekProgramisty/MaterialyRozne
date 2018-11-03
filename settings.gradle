@@ -5,4 +5,5 @@ include '02_computational_complexity'
 include '03_solid'
 include '04_bean_validation'
 include '05_dry_kiss_yagni'
+include '06_dip_di_ioc'
 
