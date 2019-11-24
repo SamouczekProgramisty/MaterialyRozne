@@ -11,6 +11,7 @@ import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class User {
@@ -61,7 +62,7 @@ public class User {
         System.out.println("Podaj imię: ");
         String name = input.next();
 
-        System.out.println("Podaj datę urodzenia (YYYY-MM-dd mm:hh): ");
+        System.out.println("Podaj datę urodzenia (YYYY-MM-dd hh:mm): ");
         LocalDateTime birthday = LocalDateTime.parse(
                 input.next("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}"),
                 new DateTimeFormatterBuilder()
