@@ -7,7 +7,10 @@ public class ZipCodeCityCoherentValidator implements ConstraintValidator<ZipCode
 
     @Override
     public boolean isValid(Address address, ConstraintValidatorContext context) {
-        return "00-000".equals(address.getZipCode()) && "Warszawa".equals(address.getPostOfficeCity());
+                PostCodeService postCodeService = new PostCodeService();
+        List<String> cityName = postCodeService.getCity(address.getZipCode());
+
+        return cityName.contains(address.getPostOfficeCity());    }
     }
 
 }

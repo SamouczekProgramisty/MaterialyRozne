@@ -24,7 +24,10 @@ public class ZipCodeCityCoherentValidatorReflection implements ConstraintValidat
         String city = getFieldValue(value, getterMethod(value, cityGetterName));
         String zipCode = getFieldValue(value, getterMethod(value, zipCodeGetterName));
 
-        return "00-000".equals(zipCode) && "Warszawa".equals(city);
+        PostCodeService postCodeService = new PostCodeService();
+        List<String> cityName = postCodeService.getCity(zipCode);
+
+        return cityName.contains(city);
     }
 
     private String getFieldValue(Object object, Method getter) {
